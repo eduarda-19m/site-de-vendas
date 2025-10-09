@@ -1,106 +1,157 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Lista de produtos com os dados e as imagens que você forneceu
-    // Nomes de arquivos são case-sensitive (sensíveis a maiúsculas/minúsculas)
-    const produtosData = [
-        {
-            nome: "Anel Flor da Bela",
-            imagem: "Anel-Disney-Rosa-de-A-Bela-e-A-Fera-163984C01-v2.png",
-            valor: getRandomPrice(300, 400),
-            descricao: "Anel de Prata S925 com detalhes em ouro. Toque de realeza."
-        },
-        {
-            nome: "Pulseira Prata e Ouro",
-            imagem: "pulseira-pandora-de-prata-e-ouro1-b795376c853b55c59d16513476788592-640-0.webp",
-            valor: getRandomPrice(350, 400),
-            descricao: "Pulseira clássica dois tons, ideal para colecionar memórias."
-        },
-        {
-            nome: "Colar Coração Cravejado",
-            imagem: "368425C01.png",
-            valor: getRandomPrice(200, 300),
-            descricao: "Pingente de coração vazado com microzircônias. Puro charme."
-        },
-        {
-            nome: "Brinco Argola Fina",
-            imagem: "PNGTRPNT_198421C02_V5_RGB.png",
-            valor: getRandomPrice(150, 250),
-            descricao: "Argolas leves e douradas. O básico que eleva o look."
-        },
-        {
-            nome: "Pingente Estrela",
-            imagem: "PNGTRPNT_397436CZ_RGB.png",
-            valor: getRandomPrice(100, 200),
-            descricao: "Estrela em ouro 18k, símbolo de luz e guia."
-        },
-        {
-            nome: "Conjunto Glamour",
-            imagem: "shopping.webp",
-            valor: getRandomPrice(300, 400),
-            descricao: "Colar e Brinco cravejados. Pronta para brilhar!"
-        },
-        {
-            nome: "Anéis Minimalistas",
-            imagem: "shopping (1).webp",
-            valor: getRandomPrice(250, 350),
-            descricao: "Mix de anéis delicados para usar em conjunto ou separados."
-        },
-        {
-            nome: "Pérolas Clássicas",
-            imagem: "shopping (2).webp",
-            valor: getRandomPrice(100, 180),
-            descricao: "Brincos de pérola atemporal. Elegância garantida."
-        },
-        {
-            nome: "Corrente Camadas",
-            imagem: "shopping (3).webp",
-            valor: getRandomPrice(180, 280),
-            descricao: "Corrente longa em banho de ouro para um visual moderno."
-        },
-        {
-            nome: "Joia de Destaque",
-            imagem: "shopping (4).webp",
-            valor: getRandomPrice(320, 400),
-            descricao: "Peça única e imponente. Para momentos inesquecíveis."
-        },
-    ];
+/* Variáveis de Cores: Preto, Dourado e Branco */
+:root {
+    --color-black: #0A0A0A; /* Preto quase absoluto */
+    --color-white: #FFFFFF;
+    --color-gold: #FFD700; /* Ouro vibrante */
+    --color-light-gray: #F9F9F9; /* Branco levemente quebrado */
+    --color-text-dark: #222;
+}
 
-    const gridProdutos = document.querySelector('.grid-produtos');
+/* Restante do Reset e Estilos Globais... */
 
-    // Função para gerar um preço aleatório (R$ 100,00 a R$ 400,00)
-    function getRandomPrice(min, max) {
-        const preco = Math.floor(Math.random() * (max - min + 1) + min);
-        return (Math.round(preco * 2) / 2).toFixed(2); 
-    }
+/* Banner Principal: IMAGEM CARREGADA AQUI VIA CSS */
+.banner {
+    /* Usei shopping (4).webp como imagem de fundo do banner */
+    background: url('shopping (4).webp') center center/cover no-repeat; 
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Camada escura para realçar o texto dourado */
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.65); 
+}
 
-    // Função para criar o card de produto
-    function criarCardProduto(produto) {
-        const card = document.createElement('div');
-        card.classList.add('produto-card');
+.banner-content {
+    color: var(--color-white);
+    max-width: 700px;
+    text-align: left;
+}
 
-        card.innerHTML = `
-            <img src="${produto.imagem}" alt="${produto.nome}">
-            <h3>${produto.nome}</h3>
-            <p>${produto.descricao}</p>
-            <p class="preco">R$ ${produto.valor}</p>
-            <button class="btn-comprar" data-nome="${produto.nome}" data-valor="${produto.valor}">Comprar Agora</button>
-        `;
+.banner-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: var(--color-gold);
+}
 
-        gridProdutos.appendChild(card);
-    }
+/* O restante do CSS da seção Banner e das outras seções continua igual... */
 
-    // Popula o grid de produtos
-    produtosData.forEach(produto => {
-        criarCardProduto(produto);
-    });
+/* --- Continuação do style.css anterior, apenas a seção .banner mudou --- */
 
-    // Lógica básica para o botão 'Comprar' (simulação de carrinho)
-    gridProdutos.addEventListener('click', (event) => {
-        if (event.target.classList.contains('btn-comprar')) {
-            const nome = event.target.getAttribute('data-nome');
-            const valor = event.target.getAttribute('data-valor');
-            
-            // Alerta de simulação
-            alert(`✅ ${nome} (R$ ${valor}) foi adicionado ao seu carrinho!`);
-        }
-    });
-});
+/* Seções Gerais */
+section {
+    padding: 100px 0;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: var(--color-black);
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 4px;
+    background-color: var(--color-gold);
+    margin: 15px auto 0;
+}
+
+/* Grid de Produtos */
+.produtos {
+    background-color: var(--color-light-gray);
+}
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 40px;
+}
+
+.produto-card {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.produto-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.produto-card img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    margin-bottom: 25px;
+}
+
+.produto-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--color-black);
+    margin-bottom: 10px;
+}
+
+.produto-card p:not(.preco) {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.produto-card .preco {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-bottom: 30px;
+}
+
+.btn-comprar {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    padding: 14px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+}
+
+.btn-comprar:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+/* Seção Sobre Nós */
+.sobre {
+    background-color: var(--color-white);
+}
+
+.sobre-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sobre-content p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--color-black);
+    color: var(--color-light-gray);
+    padding: 50px 0 30px;
+}
+
+.footer-content {
+    display: flex;
