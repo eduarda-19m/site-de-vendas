@@ -2,11 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
 
 :root {
-    --cor-primaria: #000000; /* Preto para texto principal */
-    --cor-secundaria: #333333; /* Cinza escuro para fundo/detalhes */
+    /* Novas Cores: Rosa e Azul Bebê */
+    --cor-primaria: #2C3E50; /* Azul Marinho ou Cinza Escuro para texto (mantém legibilidade) */
+    --cor-secundaria: #ECF0F1; /* Cinza claro suave para fundos secundários */
     --cor-fundo: #FFFFFF; /* Branco Puro */
-    --cor-destaque: #B8860B; /* Dourado/Bronze Escuro - Chamativo, mas elegante */
-    --cor-acao: #F5F5DC; /* Bege Claro para botões */
+    --cor-destaque: #FFB6C1; /* Rosa Claro / Pink Suave - A cor principal de destaque (Chamativa) */
+    --cor-acao: #ADD8E6; /* Azul Bebê Suave - Usado para botões e detalhes (Ação) */
+    
+    /* Detalhes para Contraste */
+    --cor-texto-claro: #FFFFFF;
 }
 
 * {
@@ -31,7 +35,7 @@ body {
 /* --- Cabeçalho --- */
 .cabecalho {
     background-color: var(--cor-fundo);
-    border-bottom: 2px solid var(--cor-destaque);
+    border-bottom: 2px solid var(--cor-destaque); /* Destaque Rosa */
     padding: 10px 0;
 }
 
@@ -44,7 +48,7 @@ body {
 .cabecalho h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.5em;
-    color: var(--cor-destaque);
+    color: var(--cor-acao); /* Título em Azul Bebê */
 }
 
 .menu ul {
@@ -64,13 +68,13 @@ body {
 }
 
 .menu ul li a:hover {
-    color: var(--cor-destaque);
+    color: var(--cor-destaque); /* Hover Rosa */
 }
 
 /* --- Seção Hero (Início) --- */
 .hero {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-fundo);
+    background-color: var(--cor-acao); /* Fundo Azul Bebê */
+    color: var(--cor-primaria);
     text-align: center;
     padding: 80px 20px;
 }
@@ -79,6 +83,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 3em;
     margin-bottom: 10px;
+    color: var(--cor-primaria);
 }
 
 .hero p {
@@ -88,8 +93,8 @@ body {
 
 .botao {
     display: inline-block;
-    background-color: var(--cor-destaque);
-    color: var(--cor-primaria); /* Texto Preto no botão Dourado */
+    background-color: var(--cor-destaque); /* Botão Rosa */
+    color: var(--cor-texto-claro); /* Texto Branco no botão Rosa */
     padding: 10px 25px;
     text-decoration: none;
     font-weight: 700;
@@ -98,7 +103,7 @@ body {
 }
 
 .botao:hover {
-    background-color: #e213a4; /* Dourado um pouco mais claro */
+    background-color: #FF69B4; /* Um rosa mais vibrante no hover */
     transform: scale(1.05);
 }
 
@@ -112,7 +117,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 2.5em;
     margin-bottom: 40px;
-    text-decoration: underline 3px var(--cor-destaque);
+    text-decoration: underline 3px var(--cor-destaque); /* Sublinhado Rosa */
     text-underline-offset: 8px;
 }
 
@@ -123,23 +128,23 @@ body {
 }
 
 .produto-card {
-    border: 1px solid #e6d3e5;
+    border: 1px solid var(--cor-secundaria);
     padding: 20px;
     border-radius: 8px;
     transition: box-shadow 0.3s, transform 0.3s;
     text-align: left;
-    background-color: #bd6cb2;
+    background-color: var(--cor-fundo);
 }
 
 .produto-card:hover {
-    box-shadow: 0 8px 15px rgba(199, 74, 168, 0.1);
+    box-shadow: 0 8px 15px rgba(255, 182, 193, 0.4); /* Sombra suave Rosa */
     transform: translateY(-5px);
 }
 
 .produto-card img {
     width: 100%;
-    height: 300px; /* Altura fixa para as fotos */
-    object-fit: cover; /* Garante que a foto cubra o espaço */
+    height: 300px; 
+    object-fit: cover; 
     border-radius: 6px;
     margin-bottom: 15px;
 }
@@ -154,13 +159,13 @@ body {
     display: block;
     font-size: 1.4em;
     font-weight: 700;
-    color: var(--cor-destaque);
+    color: var(--cor-destaque); /* Preço em Rosa */
     margin: 10px 0;
 }
 
 .adicionar-carrinho {
-    background-color: var(--cor-primaria);
-    color: var(--cor-fundo);
+    background-color: var(--cor-acao); /* Botão de ação em Azul Bebê */
+    color: var(--cor-primaria); /* Texto no botão em cor escura para contraste */
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
@@ -169,14 +174,14 @@ body {
 }
 
 .adicionar-carrinho:hover {
-    background-color: var(--cor-destaque);
-    color: var(--cor-primaria);
+    background-color: var(--cor-destaque); /* Hover para Rosa */
+    color: var(--cor-texto-claro); /* Texto Branco no hover Rosa */
 }
 
 /* --- Contato e Rodapé --- */
 .contato {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-fundo);
+    background-color: var(--cor-secundaria); /* Fundo Cinza Claro */
+    color: var(--cor-primaria);
     padding: 50px 20px;
     text-align: center;
 }
@@ -184,22 +189,23 @@ body {
 .contato h2 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 20px;
+    color: var(--cor-acao); /* Título em Azul Bebê */
 }
 
 .contato a {
-    color: var(--cor-destaque);
+    color: var(--cor-destaque); /* Links em Rosa */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .contato a:hover {
-    color: #DAA520;
+    color: #FF69B4;
     text-decoration: underline;
 }
 
 .rodape {
-    background-color: var(--cor-primaria);
-    color: #CCCCCC;
+    background-color: var(--cor-primaria); /* Fundo escuro (Azul Marinho) */
+    color: var(--cor-secundaria); /* Texto cinza claro */
     text-align: center;
     padding: 15px 0;
     font-size: 0.9em;
