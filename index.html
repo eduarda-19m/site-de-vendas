@@ -3,53 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bella Bijoux - Loja de Joias</title>
+    <title>Bella Bijoux - Joias Modernas e Sofisticadas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Bella Bijoux</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+    <header class="cabecalho">
+        <div class="container">
+            <h1>Bella Bijoux</h1>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="sobre">
-        <div class="container">
-            <h2>Bem-vindo à Bella Bijoux</h2>
-            <p>Aqui você encontra joias sofisticadas e elegantes, feitas para brilhar em qualquer ocasião. Preços que variam de R$100 a R$400, com opções para todos os estilos!</p>
-        </div>
-    </section>
-
-    <section id="produtos">
-        <div class="container">
-            <h2>Nossos Produtos</h2>
-            <div class="produtos-list">
-                <!-- Aqui você vai adicionar as imagens das joias -->
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h2>Seu Brilho Começa Aqui.</h2>
+                <p>Joias modernas e exclusivas, com preços entre R$100 e R$400.</p>
+                <a href="#produtos" class="botao">Ver Coleção</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contato">
+        <section id="produtos" class="produtos container">
+            <h2>Nossa Coleção</h2>
+            <div class="galeria-produtos">
+                <div class="produto-card">
+                    <img src="caminho/para/sua/foto1.jpg" alt="Colar Elegante">
+                    <h3>Nome da Joia 1</h3>
+                    <p>Descrição curta e atraente.</p>
+                    <span class="preco">R$ 150,00</span>
+                    <button class="adicionar-carrinho">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto-card">
+                    <img src="caminho/para/sua/foto2.jpg" alt="Brinco Dourado">
+                    <h3>Nome da Joia 2</h3>
+                    <p>Descrição curta e atraente.</p>
+                    <span class="preco">R$ 280,00</span>
+                    <button class="adicionar-carrinho">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <div class="container">
+                <h2>Fale Conosco</h2>
+                <p>Entre em contato para dúvidas ou pedidos personalizados.</p>
+                <p><strong>E-mail:</strong> <a href="mailto:bellabijoux2025@gmail.com">bellabijoux2025@gmail.com</a></p>
+                <p><strong>Telefone:</strong> (44) 99562-568</p>
+                <p><strong>Instagram:</strong> <a href="https://instagram.com/bellabijoux_" target="_blank">@bellabijoux_</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
         <div class="container">
-            <h2>Entre em Contato</h2>
-            <p>Tem alguma dúvida ou quer fazer um pedido? Entre em contato conosco!</p>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:bellabijoux2025@gmail.com">bellabijoux2025@gmail.com</a></li>
-                <li><strong>Telefone:</strong> (44) 99562568</li>
-                <li><strong>Instagram:</strong> <a href="https://www.instagram.com/bellabijoux_"> @bellabijoux_</a></li>
-            </ul>
+            <p>&copy; 2025 Bella Bijoux. Todos os direitos reservados.</p>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Bella Bijoux. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
