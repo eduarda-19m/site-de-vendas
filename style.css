@@ -1,16 +1,13 @@
-/* Importação de uma fonte moderna do Google Fonts (opcional, remova se não quiser) */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
+/* Importação de uma fonte moderna elegante */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
 
 :root {
-    /* Novas Cores: Rosa e Azul Bebê */
-    --cor-primaria: #2C3E50; /* Azul Marinho ou Cinza Escuro para texto (mantém legibilidade) */
-    --cor-secundaria: #ECF0F1; /* Cinza claro suave para fundos secundários */
-    --cor-fundo: #FFFFFF; /* Branco Puro */
-    --cor-destaque: #FFB6C1; /* Rosa Claro / Pink Suave - A cor principal de destaque (Chamativa) */
-    --cor-acao: #ADD8E6; /* Azul Bebê Suave - Usado para botões e detalhes (Ação) */
-    
-    /* Detalhes para Contraste */
-    --cor-texto-claro: #FFFFFF;
+    /* Cores Rosa e Azul Bebê */
+    --cor-rosa: #FFB6C1; /* Rosa Claro - Destaque Principal */
+    --cor-azul-bebe: #ADD8E6; /* Azul Bebê - Ação/Segundo Destaque */
+    --cor-texto-escuro: #2C3E50; /* Azul Marinho Escuro para Textos (Legibilidade) */
+    --cor-fundo-claro: #F8F8F8; /* Fundo levemente off-white */
+    --cor-fundo-branco: #FFFFFF;
 }
 
 * {
@@ -20,23 +17,23 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--cor-primaria);
-    background-color: var(--cor-fundo);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-fundo-claro);
     line-height: 1.6;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px;
 }
 
-/* --- Cabeçalho --- */
+/* --- Cabeçalho e Navegação --- */
 .cabecalho {
-    background-color: var(--cor-fundo);
-    border-bottom: 2px solid var(--cor-destaque); /* Destaque Rosa */
-    padding: 10px 0;
+    background-color: var(--cor-fundo-branco);
+    border-bottom: 1px solid var(--cor-azul-bebe);
+    padding: 15px 0;
 }
 
 .cabecalho .container {
@@ -45,10 +42,11 @@ body {
     align-items: center;
 }
 
-.cabecalho h1 {
+.logo {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
-    color: var(--cor-acao); /* Título em Azul Bebê */
+    font-size: 1.8em;
+    color: var(--cor-rosa); /* Logo em Rosa */
+    font-weight: 700;
 }
 
 .menu ul {
@@ -56,157 +54,173 @@ body {
     display: flex;
 }
 
-.menu ul li {
-    margin-left: 20px;
-}
-
 .menu ul li a {
     text-decoration: none;
-    color: var(--cor-primaria);
-    font-weight: 400;
-    transition: color 0.3s;
+    color: var(--cor-texto-escuro);
+    margin-left: 25px;
+    padding: 5px 0;
+    position: relative;
 }
 
 .menu ul li a:hover {
-    color: var(--cor-destaque); /* Hover Rosa */
+    color: var(--cor-azul-bebe);
 }
 
-/* --- Seção Hero (Início) --- */
+/* --- Seção Hero --- */
 .hero {
-    background-color: var(--cor-acao); /* Fundo Azul Bebê */
-    color: var(--cor-primaria);
+    background-color: var(--cor-fundo-branco);
+    padding: 80px 0;
     text-align: center;
-    padding: 80px 20px;
+    border-bottom: 5px solid var(--cor-rosa);
 }
 
 .hero h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: var(--cor-primaria);
+    font-size: 2.8em;
+    color: var(--cor-texto-escuro);
+    margin-bottom: 15px;
 }
 
 .hero p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 30px;
+    color: #666;
 }
 
 .botao {
     display: inline-block;
-    background-color: var(--cor-destaque); /* Botão Rosa */
-    color: var(--cor-texto-claro); /* Texto Branco no botão Rosa */
-    padding: 10px 25px;
+    background-color: var(--cor-rosa); /* Botão Rosa */
+    color: var(--cor-texto-escuro); 
+    padding: 12px 30px;
     text-decoration: none;
     font-weight: 700;
-    border-radius: 5px;
+    border-radius: 25px; /* Botões arredondados, mais modernos */
     transition: background-color 0.3s, transform 0.3s;
+    border: 2px solid var(--cor-rosa);
 }
 
 .botao:hover {
-    background-color: #FF69B4; /* Um rosa mais vibrante no hover */
-    transform: scale(1.05);
+    background-color: var(--cor-azul-bebe); /* Hover Azul Bebê */
+    color: var(--cor-texto-escuro);
+    border-color: var(--cor-azul-bebe);
+    transform: translateY(-2px);
 }
 
-/* --- Produtos --- */
+/* --- Seção de Produtos (GRID MODERNO) --- */
 .produtos {
-    padding: 60px 20px;
+    padding: 60px 0;
     text-align: center;
 }
 
-.produtos h2 {
+.titulo-secao {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
+    font-size: 2.2em;
     margin-bottom: 40px;
-    text-decoration: underline 3px var(--cor-destaque); /* Sublinhado Rosa */
-    text-underline-offset: 8px;
+    color: var(--cor-texto-escuro);
 }
 
 .galeria-produtos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* 3 colunas em telas grandes, se ajusta em telas menores */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px;
 }
 
 .produto-card {
-    border: 1px solid var(--cor-secundaria);
-    padding: 20px;
-    border-radius: 8px;
+    background-color: var(--cor-fundo-branco);
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s, transform 0.3s;
     text-align: left;
-    background-color: var(--cor-fundo);
 }
 
 .produto-card:hover {
-    box-shadow: 0 8px 15px rgba(255, 182, 193, 0.4); /* Sombra suave Rosa */
+    box-shadow: 0 10px 20px rgba(255, 182, 193, 0.6); /* Sombra mais destacada e rosa */
     transform: translateY(-5px);
 }
 
 .produto-card img {
     width: 100%;
-    height: 300px; 
-    object-fit: cover; 
-    border-radius: 6px;
-    margin-bottom: 15px;
-}
-
-.produto-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5em;
-    margin-bottom: 5px;
-}
-
-.produto-card .preco {
+    height: 350px; /* Fotos em formato vertical/quadrado, fixas */
+    object-fit: cover; /* Recorta a imagem para preencher, sem distorcer */
     display: block;
+}
+
+.card-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-info h3 {
     font-size: 1.4em;
+    margin-bottom: 5px;
+    color: var(--cor-texto-escuro);
+}
+
+.card-info .preco {
+    font-size: 1.5em;
     font-weight: 700;
-    color: var(--cor-destaque); /* Preço em Rosa */
-    margin: 10px 0;
+    color: var(--cor-rosa); /* Preço em Rosa */
+    margin: 10px 0 15px 0;
 }
 
 .adicionar-carrinho {
-    background-color: var(--cor-acao); /* Botão de ação em Azul Bebê */
-    color: var(--cor-primaria); /* Texto no botão em cor escura para contraste */
-    padding: 8px 15px;
+    width: 100%;
+    background-color: var(--cor-azul-bebe); /* Botão de Compra Azul Bebê */
+    color: var(--cor-texto-escuro);
+    padding: 10px 0;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
+    font-weight: 700;
     transition: background-color 0.3s;
 }
 
 .adicionar-carrinho:hover {
-    background-color: var(--cor-destaque); /* Hover para Rosa */
-    color: var(--cor-texto-claro); /* Texto Branco no hover Rosa */
+    background-color: var(--cor-rosa); /* Hover para Rosa */
+    color: var(--cor-texto-escuro);
 }
 
 /* --- Contato e Rodapé --- */
 .contato {
-    background-color: var(--cor-secundaria); /* Fundo Cinza Claro */
-    color: var(--cor-primaria);
-    padding: 50px 20px;
+    background-color: var(--cor-azul-bebe); /* Fundo Azul Bebê */
+    color: var(--cor-texto-escuro);
+    padding: 50px 0;
     text-align: center;
 }
 
-.contato h2 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
-    color: var(--cor-acao); /* Título em Azul Bebê */
-}
-
 .contato a {
-    color: var(--cor-destaque); /* Links em Rosa */
-    text-decoration: none;
+    color: var(--cor-texto-escuro);
+    font-weight: 700;
+    text-decoration: underline 1px;
+    text-underline-offset: 3px;
     transition: color 0.3s;
 }
 
 .contato a:hover {
-    color: #FF69B4;
-    text-decoration: underline;
+    color: var(--cor-rosa);
 }
 
 .rodape {
-    background-color: var(--cor-primaria); /* Fundo escuro (Azul Marinho) */
-    color: var(--cor-secundaria); /* Texto cinza claro */
+    background-color: var(--cor-texto-escuro); /* Fundo Azul Marinho */
+    color: var(--cor-fundo-claro);
     text-align: center;
     padding: 15px 0;
     font-size: 0.9em;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .cabecalho .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu ul {
+        margin-top: 10px;
+    }
+    .menu ul li a {
+        margin: 0 10px;
+    }
 }
