@@ -3,11 +3,11 @@
 
 :root {
     /* Cores Rosa e Azul Bebê */
-    --cor-rosa: #d346a4; /* Rosa Claro - Destaque Principal */
+    --cor-rosa: #d658ac; /* Rosa Claro - Destaque Principal */
     --cor-azul-bebe: #ADD8E6; /* Azul Bebê - Ação/Segundo Destaque */
     --cor-texto-escuro: #0d1216; /* Azul Marinho Escuro para Textos (Legibilidade) */
     --cor-fundo-claro: #fcf0f8; /* Fundo levemente off-white */
-    --cor-fundo-branco: #f8deee;
+    --cor-fundo-branco: #fae7f3;
 }
 
 * {
